@@ -52,5 +52,5 @@ stages:
         action: 'deploy'
         kubernetesServiceConnection: 'k8s-service-connection'
         namespace: 'default'
-        manifests: '$(System.ArtifactsDirectory)/configuration/k8s/deployment.yaml'
+        manifests: '$(System.ArtifactsDirectory)/configuration/k8s/deployment.yml'
         containers: 'e880613/devops-k8s-image:$(tag)'
