@@ -53,4 +53,4 @@ stages:
         kubernetesServiceConnection: 'k8s-service-connection'
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/configuration/k8s/deployment.yaml'
-        containers: 'kousikm/hello_rest_api:$(tag)'
+        containers: 'e880613/devops-k8s-image:$(tag)'
