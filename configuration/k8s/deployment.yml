@@ -1,4 +1,4 @@
-apiVersion: v1.20.1-5-g76a04fc
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-deployment
