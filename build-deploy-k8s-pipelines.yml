@@ -18,7 +18,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'docker-registry'
+        containerRegistry: 'santosh-gh'
         repository: 'e880613/devops-k8s-image'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
