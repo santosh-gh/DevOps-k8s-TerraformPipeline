@@ -21,3 +21,19 @@ steps:
   name: 'PublicKey'
   inputs:  
     secureFile: 'azure_rsa.pub'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iac/azure'
+    backendServiceArm: 'DevOps-k8s-ServiceConnection'
+    backendAzureRmResourceGroupName: 'backend-rg'
+    backendAzureRmStorageAccountName: 'tfpipelinestorage'
+    backendAzureRmContainerName: 'mycontainer'
+    backendAzureRmKey: 'k8.tfstate'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iac/azure'
+    environmentServiceNameAzureRM: 'DevOps-k8s-ServiceConnection'
