@@ -21,6 +21,13 @@ stages:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**/*.yml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DevOps-k8s-DockerRegistry'
+        repository: 'e880613/devops-k8s-image'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
