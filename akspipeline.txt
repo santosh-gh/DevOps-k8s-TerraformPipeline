@@ -1,0 +1,39 @@
+az ad sp create-for-rbac --role="Contributor" --scopes="subscriptions/ec3ded2c-750b-415f-b382-96464321f3cf"
+
+az ad sp create-for-rbac -n pipeline-sp --skip-assignment
+D:\azure_rsa.pub
+  
+  
+  
+az login
+az ad sp create-for-rbac --role="Contributor" --scopes="subscriptions/SUBSCRIPTION_ID"
+az ad sp create-for-rbac -n <Service Principal Name> --skip-assignment
+
+SSH key generation to create public key :-
+
+ssh-keygen -m PEM -t rsa -b 4096
+
+Connecting AKS  from Azure CLI :-
+
+az aks get-credentials --name  K8_CLUSTER_NAME --resource-group K8_GROUP_NAME
+az aks enable-addons --addons kube-dashboard --resource-group K8_GROUP_NAME --name K8_CLUSTER_NAME
+az aks browse --resource-group K8_GROUP_NAME --name K8_CLUSTER_NAME
+
+
+This code is used to demostrate the implementation of DevOps using Azure DevOps Pipeline, Terraform, Docker registry and Kubernetes. A simple python hello api is deployed in the Kubernetes cluster using AzurePipeline and the backend Kubernetes cluster is created using Terraform.
+
+API URL :- SERVER:5000/hello
+
+Sample Output :- Hello XXXXXXXXXX, Current time is 30-06-2020 01:01:01
+
+Azure Marketplace TerraformCLI plugins:-
+
+Terraform 1 (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks)
+
+Terraform 2 (https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)
+
+Detail implementation is given in following video:-
+
+https://youtu.be/U5Ti0LjxvLE
+
+https://youtu.be/e0kSNSN6idE
